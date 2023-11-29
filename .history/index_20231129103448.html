@@ -48,41 +48,39 @@
         <section class="code">
             <h2>Code Example</h2>
             <p>In project with user validation:</p>
-            <pre>
-                <code>
-                    buttonReg.addEventListener('click', e => {
-                    e.preventDefault();
-                    let validateOk = getValidationUser();
-                    let user = {};
-                    user.email = emailData;
-                    user.password = passwordData;
-                    if(validateOk){
-                    if(localStorage.getItem('users').length !== 0) {
-                    let newUser = JSON.parse(localStorage.getItem('users'));
-                    newUser.push(user);
-                    localStorage.setItem('users', JSON.stringify(newUser));
-                    }
+            <code>
+                buttonReg.addEventListener('click', e => {
+                e.preventDefault();
+                let validateOk = getValidationUser();
+                let user = {};
+                user.email = emailData;
+                user.password = passwordData;
+                if(validateOk){
+                if(localStorage.getItem('users').length !== 0) {
+                let newUser = JSON.parse(localStorage.getItem('users'));
+                newUser.push(user);
+                localStorage.setItem('users', JSON.stringify(newUser));
+                }
 
-                    else {
-                    const newUser = [];
-                    newUser.push(user);
-                    localStorage.setItem('users', JSON.stringify(newUser));
-                    }
-                    }
-                    window.location = 'Enter_page.html'
-                    })
-                </code>
-            </pre>
+                else {
+                const newUser = [];
+                newUser.push(user);
+                localStorage.setItem('users', JSON.stringify(newUser));
+                }
+                }
+                window.location = 'Enter_page.html'
+                })
+            </code>
             <p>React-project:</p>
             <pre>
                 <code>
                     { basket.map((item, index) => {
                     return (
                     <div className="basket__item" key={index}>
-                        <BasketItem id={item.id} url={item.img} name={item.title} price={item.price}
-                            count={item.count} />
-                    </div> )
-                    })
+                        <BasketItem id={ item.id } url={ item.img } name={ item.title } price={ item.price} count={
+                            item.count } />
+                    </div>
+                    )
                     }
                 </code>
             </pre>
